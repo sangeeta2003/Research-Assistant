@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://research-assistant-rj4p.onrender.com/",
+  baseURL: "https://research-assistant-rj4p.onrender.com/api",
 });
 
 export default api;
