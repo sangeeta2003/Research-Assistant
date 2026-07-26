@@ -17,23 +17,33 @@ const ResultCard = ({ result }) => {
   };
 
   return (
-    <div className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+    <div className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8">
 
-      <div className="flex justify-between items-center mb-5">
-        <h2 className="text-2xl font-bold text-gray-800">
-          AI Response
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+          🤖 AI Response
         </h2>
 
         <button
           onClick={copyToClipboard}
-          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
+          className={`px-5 py-2 rounded-xl font-semibold transition-all duration-300 ${
+            copied
+              ? "bg-green-600 text-white"
+              : "bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:scale-105"
+          }`}
         >
-          {copied ? "Copied ✓" : "Copy"}
+          {copied ? "✅ Copied" : "📋 Copy"}
         </button>
+
       </div>
 
-      <div className="bg-gray-100 rounded-lg p-5 whitespace-pre-wrap leading-8 text-gray-700">
+      {/* Response Box */}
+      <div className="bg-black/40 border border-cyan-500/20 rounded-2xl p-6 text-gray-200 whitespace-pre-wrap leading-8 shadow-inner">
+
         {result}
+
       </div>
 
     </div>
